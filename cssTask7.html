@@ -3,96 +3,116 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSS TASK-07</title>
+    <title>Task-7</title>
     <style>
         body {
-            background-color: rgb(99, 16, 99);
-            font-family: Arial, sans-serif;
-            color: white;
-            text-align: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #A22B55;
+            font-family: Arial, Helvetica, sans-serif;
         }
-        .container {
-            background-color: rgb(69, 3, 69);
-            margin: auto;
+        .outer {
+            background-color: #75203F;
             padding: 20px;
-            width: 300px;
-            border-radius: 10px;
-            color: black;
         }
-        input[type=text], input[type=email], input[type=password], select, textarea {
+        .inner {
+            margin: 0 auto;
+            width: 80%;
+            padding-right:80px;
+            background-color: #75203F;
+            padding-left:20px;
+        }
+
+        form {
+            text-align: left;
+        }
+
+        table {
+            width: 100%;
+        }
+
+        td {
+            padding: 5px;
+            padding-left:10px;
+            color:white;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="number"],
+        select,
+        textarea {
+            width: 180px;
+            padding:5px;
+            border: none;
+        }
+
+
+        input[type="submit"] {
+            background-color: white;
+            color: #75203F;
             width: 100%;
             padding: 10px;
-            margin: 10px 0;
-            color:aliceblue;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
-        }
-        input[type=submit] {
-            width: 100%;
-            background-color: #4CAF50;
-            color: white;
-            padding: 14px 20px;
-            margin: 8px 0;
             border: none;
-            border-radius: 4px;
+            border-radius: 5px;
             cursor: pointer;
-        }
-        input[type=submit]:hover {
-            background-color: #45a049;
-        }
-        .gender {
-            margin: 10px 0;
-        }
-        label{
-            display: inline-block;
-            width: 100px;
-            color: aliceblue;
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
-
-<div class="container">
-    <form action="/submitRegistration" method="post">
-        <label for="name">Name</label>
-        <input type="text" id="name" name="name" placeholder="Your name..">
-
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" placeholder="Your email..">
-
-        <label for="password">Password</label>
-        <input type="password" id="password" name="password" placeholder="Your password..">
-
-        <label for="phone">Phone Number</label>
-        <input type="text" id="phone" name="phone" placeholder="Your phone number..">
-
-        <div class="gender">
-            <label>Gender</label><br>
-            <input type="radio" id="male" name="gender" value="male">
-            <label for="male">Male</label>
-            <input type="radio" id="female" name="gender" value="female">
-            <label for="female">Female</label>
-            <input type="radio" id="other" name="gender" value="other">
-            <label for="other">Other</label>
+    <div class="outer">
+        <div class="inner">
+            <form>
+                <table>
+                    <tr>
+                        <td>Name:</td>
+                        <td><input type="text" placeholder="your name"></td>
+                    </tr>
+                    <tr>
+                        <td>Email:</td>
+                        <td><input type="email" placeholder="your email"></td>
+                    </tr>
+                    <tr>
+                        <td>Password:</td>
+                        <td><input type="password"></td>
+                    </tr>
+                    <tr>
+                        <td>Phone Number:</td>
+                        <td><input type="number"></td>
+                    </tr>
+                    <tr>
+                        <td>Gender: </td>
+                        <td>Male:<input type="radio" name="gender" value="Male">Female:<input type="radio" name="gender" value="Female">Others:<input type="radio" name="gender" value="Other:"></td>
+                    </tr>
+                    <tr>
+                        <td>Language</td>
+                        <td><select>
+                            <option value="" disabled selected>Select language</option>
+                            <option value="tel">Telugu</option>
+                            <option value="eng">English</option>
+                            <option value="hin">Hindi</option>
+                        </select></td>
+                    </tr>
+                    <tr>
+                        <td>Zip Code:</td>
+                        <td><input type="number"></td>
+                    </tr>
+                    <tr>
+                        <td>About:</td>
+                        <td><textarea placeholder="write about yourself..."></textarea></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><input type="submit" value="Register"></td>
+                    </tr>
+                </table>
+            </form>
         </div>
-
-        <label for="language">Language</label>
-        <select id="language" name="language">
-            <option value="english">English</option>
-            <option value="spanish">Spanish</option>
-            <option value="other">Other</option>
-        </select>
-
-        <label for="zipcode">Zip Code</label>
-        <input type="text" id="zipcode" name="zipcode" placeholder="Your zip code..">
-
-        <label for="about">About</label>
-        <textarea id="about" name="about" placeholder="Write something about yourself.." style="height:100px"></textarea>
-
-        <input type="submit" value="Register">
-    </form>
-</div>
-
+    </div>
 </body>
 </html>
